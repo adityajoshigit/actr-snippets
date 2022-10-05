@@ -1,14 +1,40 @@
 {
-    "Create a new classic actor" : {
-        "prefix": "cla",
+    "New Actor : Classic" : {
+        "prefix": "accl",
         "body": [
-            "public class MyActor extends AbstractActor {",
-            "   @Override",
-            "   public Receive createReceive() {",
+            "public class ${1:MyActor} extends AbstractActor {",
             "       ",
-            "   }",
+            "    private ${1:MyActor}() {",
+            "        ",
+            "    }",
+            "",
+            "    public static Props props() {",
+            "        return Props.create(${1:MyActor}.class, () -> new ${1:MyActor}());",
+            "    }",
+            "       ",
+            "    @Override",
+            "    public Receive createReceive() {",
+            "        return receiveBuilder()",
+            "            .matchAny(${3:obj} -> System.out.println(${3:obj}))",
+            "            .build();$0",
+            "    }",
+            "",
+            "    private static class ${2:MyMsg} {",
+            "       ",
+            "        public ${2:MyMsg}() {",
+            "            this.from = from;",
+            "        }",
+            "       ",
+            "    }",
             "}"
         ],
-        "description": "Creates boilerplate code for a classic actor allowing user to type in the name of the actor"
-    }
+        "description": "Creates boilerplate code for a classic actor allowing user to type in the name of the actor using classic actors syntax"
+    },
+    "New Child : Classic": {
+        "prefix": "chcl",
+        "body":[
+            "final ActorRef ${1:myChild} = getContext().actorOf(Props.create(${1:ChildActor}.class), \"${1:myChild}\");$0"
+        ],
+        "description": "Creates boilerplate code for creating new isntance of child actor in classic actors syntax"
+    } 
 }
