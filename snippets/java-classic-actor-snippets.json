@@ -15,14 +15,15 @@
             "    @Override",
             "    public Receive createReceive() {",
             "        return receiveBuilder()",
-            "            .matchAny(${3:obj} -> System.out.println(${3:obj}))",
+            "            .match(${2:MyMsg}.class, myMsg -> System.out.println(myMsg))",
+            "            .matchAny(obj -> System.out.println(obj))",
             "            .build();$0",
             "    }",
             "",
             "    private static class ${2:MyMsg} {",
             "       ",
             "        public ${2:MyMsg}() {",
-            "            this.from = from;",
+            "            ",
             "        }",
             "       ",
             "    }",
@@ -36,5 +37,18 @@
             "final ActorRef ${1:myChild} = getContext().actorOf(Props.create(${1:ChildActor}.class), \"${1:myChild}\");$0"
         ],
         "description": "Creates boilerplate code for creating new isntance of child actor in classic actors syntax"
-    } 
+    },
+    "Receive Message - Classic" : {
+        "prefix" : "reccl",
+        "body": [
+            "@Override",
+            "public Receive createReceive() {",
+            "    return receiveBuilder()",
+            "        .match(${1:MyMsg}.class, myMsg -> System.out.println(myMsg))",
+            "        .matchAny(obj -> System.out.println(obj))",
+            "        .build();$0",
+            "}"
+        ],
+        "description": "createReceive() method for handling message reception"
+    }
 }
