@@ -1,0 +1,14 @@
+{
+    "Create a new classic actor" : {
+        "prefix": "cla",
+        "body": [
+            "public class MyActor extends AbstractActor {",
+            "   @Override",
+            "   public Receive createReceive() {",
+            "       ",
+            "   }",
+            "}"
+        ],
+        "description": "Creates boilerplate code for a classic actor allowing user to type in the name of the actor"
+    }
+}
