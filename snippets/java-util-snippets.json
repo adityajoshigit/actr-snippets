@@ -1,3 +1,25 @@
 {
-    
+    "Null Check": {
+        "prefix": "non-null-check",
+        "description" : "Provides if-block for varaiable not NULL",
+        "body": [
+            "if (${1:var} != null) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "New ArrayList": {
+        "prefix": "new-arraylist",
+        "description": "Creates new ArrayList",
+        "body": [
+            "List<${1:Integer}> ${2:lst} = new ArrayList<${1:Integer}>();"
+        ]
+    },
+    "New Scanner Instance": {
+        "prefix": "scanner-input",
+        "description": "Creates new Scanner isntance with System.in",
+        "body": [
+            "Scanner ${1:INPUT_SCANNER} = new Scanner(System.in);\n$0"
+        ]
+    }
 }
