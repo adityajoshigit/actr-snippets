@@ -1,0 +1,21 @@
+{
+    "New Predicate Class" : {
+        "prefix": "predicate-class",
+        "description": "Creates boilerplate code for new predicate class",
+        "body": [
+            "public class ${1:MyPredicate} implements Predicate<${2:Obj}> {",
+            "\t@Override",
+            "\tpublic boolean test(${2:Obj} ${3:thatObj}) {",
+            "\t\treturn this == thatObj;",
+            "\t}",
+            "}"
+        ]
+    },
+    "One-line Predicate": {
+        "prefix": "predicate-var",
+        "description": "Creates a shorthand one-line representation of predicate with some defualt condition",
+        "body": [
+            "Predicate<${1:MyClass}> ${4:myPredicate} = (${2:instanceVar}) -> ${3:${2:instanceVar} == ${2:instanceVar}};"
+        ]
+    }
+}
