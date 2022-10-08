@@ -17,5 +17,53 @@
         "body": [
             "Predicate<${1:MyClass}> ${4:myPredicate} = (${2:instanceVar}) -> ${3:${2:instanceVar} == ${2:instanceVar}};"
         ]
+    },
+    "Display List Contents": {
+        "prefix": "print-list",
+        "body": [
+            "${1:lst}.forEach(${2:element} -> System.out.println(${2:element}));"
+        ],
+        "description": "Displays each object in the list using forEach"
+    },
+    "int[] to ArrayList": {
+
+    },
+    "Integer[] to ArrayList": {
+
+    },
+    "ArrayList to Integer[]" : {
+        "body": [
+            "Integer[] ${2:boxedIntegerArray} = ${1:lst}.toArray(new Integer[${1:lst}.size()]);"
+        ],
+        "description": "Converts ArrayList<Integer> to equivalent boxed Integer array"
+    },
+    "ArrayList to int[]": {
+        "body": [
+            "int[] {2:intArray} = ${1:lst}.stream().mapToInt(i -> i).toArray();"
+        ],
+        "description": "Converts ArrayList<Integer> to equivalent int[]"
+    },
+    "double[] to ArrayList": {
+
+    },
+    "Double[] to ArrayList": {
+
+    },
+    "List to Double[]" : {
+
+    },
+    "Sort List Ascending": {
+        "prefix": "sort-list-asc",
+        "description": "Sort the elements of the list in ascending order",
+        "body": [
+            "${1:lst}.sort((${2:a}, ${3:b}) -> ${2:a} - ${3:b});"
+        ]
+    },
+    "Sort List Descending": {
+        "prefix": "sort-list-desc",
+        "description": "Sort the elements of the list in descending order",
+        "body": [
+            "${1:lst}.sort((${2:a}, ${3:b}) -> ${3:b} - ${2:a});"
+        ]
     }
 }
