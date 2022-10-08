@@ -14,6 +14,14 @@
             {
             "language": "java",
             "path": "./snippets/java-classic-actor-snippets.json"
+            },
+            {
+            "language": "java",
+            "path": "./snippets/java-util-snippets.json"
+            },
+            {
+            "language": "java",
+            "path": "./snippets/java-8plus-util-snippets.json"
             }
         ]
     }
